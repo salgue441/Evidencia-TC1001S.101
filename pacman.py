@@ -148,7 +148,7 @@ def move():
             course.y = plan.y
 
         up()
-        goto(point.x + 10, point.y + 10)
+        goto(point.x + 25, point.y + 25)
         dot(20, 'red')
 
     update()
