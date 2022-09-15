@@ -18,6 +18,8 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
+global count
+count=0
 
 
 def square(x, y):
@@ -49,11 +51,19 @@ def tap(x, y):
     mark = state['mark']
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
+        
         state['mark'] = spot
+
+
     else:
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+        
+   
+    global count
+    count += 1
+    print(count)
 
 
 def draw():
@@ -75,7 +85,7 @@ def draw():
         up()
         goto(x + 2, y)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles[mark], font=('Times New Roman', 30, 'normal'))
 
     update()
     ontimer(draw, 100)
@@ -89,3 +99,4 @@ tracer(False)
 onscreenclick(tap)
 draw()
 done()
+
