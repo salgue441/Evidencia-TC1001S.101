@@ -2,43 +2,43 @@
 
 Exercises
 
-1. Give the X and O a different color and width.
-2. What happens when someone taps a taken spot?
-3. How would you detect when someone has won?
-4. How could you create a computer player?
+Modificar el tamaño y el color de los símbolos "X" y "O" y centrarlos.
+
 """
 
-from turtle import goto, up, down, circle, onscreenclick
-from turtle import done, hideturtle, setup, tracer, update
+from turtle import goto, up, down, circle, onscreenclick, pencolor
+from turtle import done, hideturtle, setup, tracer, update, colormode, color
 
 from freegames import line
 
 
 def grid():
     """Draw tic-tac-toe grid."""
-    line(-67, 200, -67, -200)
-    line(67, 200, 67, -200)
-    line(-200, -67, 200, -67)
-    line(-200, 67, 200, 67)
+    line(-100, 300, -100, -300)
+    line(100, 300, 100, -300)
+    line(-300, -100, 300, -100)
+    line(-300, 100, 300, 100)
 
 
 def drawx(x, y):
     """Draw X player."""
-    line(x, y, x + 133, y + 133)
-    line(x, y + 133, x + 133, y)
+    color('blue')
+    line(x, y, x + 200, y + 200)
+    line(x, y + 200, x + 200, y)
 
 
 def drawo(x, y):
     """Draw O player."""
+    color('red')
     up()
-    goto(x + 67, y + 5)
+    goto(x + 100, y + 5)
     down()
-    circle(62)
+    circle(95)
 
 
 def floor(value):
-    """Round value down to grid with square size 133."""
-    return ((value + 200) // 133) * 133 - 200
+    """Round value down to grid with square size 200."""
+    return ((value + 300) // 200) * 200 - 300
 
 
 state = {'player': 0}
@@ -61,6 +61,8 @@ hideturtle()
 tracer(False)
 grid()
 update()
+colormode()
+pencolor()
 onscreenclick(tap)
 done()
 # This is a new line that ends the file.
