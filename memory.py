@@ -59,7 +59,9 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-        
+        if not any(hide):
+            print("You've win!")
+            quit()
    
     global count
     count += 1
