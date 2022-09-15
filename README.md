@@ -11,4 +11,7 @@ Ademas, generamos la deteccion de victoria que señala en consola cuando se han 
 
 Para poder compilar este juego, es necesario tener instalado python3 en tu dispositivo, asi como las librerias tkinter, turtle, y freegames, una vez cumplidos estos requerimientos, ejecutamos el siguiente comando:
 
-´´´ python3 memory.py ´´´
+```
+python3 memory.py
+
+```
