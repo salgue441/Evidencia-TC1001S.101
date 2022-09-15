@@ -8,4 +8,7 @@ En este programa solo se implemento un contador de clicks, para el cual se utili
 Ademas, generamos la deteccion de victoria que señala en consola cuando se han descubierto todas las tiles, por lo que usando un "if not any hide", pudimos desplegar un mensaje de victoria
 
 # Ejecucion:
-python3 memory.py
+
+Para poder compilar este juego, es necesario tener instalado python3 en tu dispositivo, asi como las librerias tkinter, turtle, y freegames, una vez cumplidos estos requerimientos, ejecutamos el siguiente comando:
+
+´´´ python3 memory.py ´´´
