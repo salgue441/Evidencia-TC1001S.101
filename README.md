@@ -15,7 +15,7 @@ Los cambios realizados fueron los siguientes:
 - Cambiar el tablero: cambios en los espacios disponibles para mover al personaje de pacman
 - Hacer que los fantasmas vayan más rápido: cambios en la velocidad de los fantasmas, de velocidad 10 a 20
 
-# Como compilar
+# Como correr el juego
 
 Para compilar el proyecto es necesario tener instalado Python 3 y las librerias de freegames, turtle y tkinter. Al tener instalados estas librerias, en la terminal escribe la siguiente linea
 
