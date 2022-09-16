@@ -12,7 +12,7 @@ Clasico juego de pacman tomado de freegames.com
 
 Los cambios realizados fueron los siguientes:
 
-- Implementación del estilo PEP8. El estilo puede ser comprobado con el siguiente comando
+- Implementación del estándar PEP8. El estándar puede ser comprobado con la librería flake8 el siguiente comando
 
     ```
     python3 -m flake8 pacman.py
