@@ -16,6 +16,7 @@ from turtle import Turtle, bgcolor, clear, up, \
 
 from freegames import floor, vector
 
+# variables del juego
 state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
@@ -117,6 +118,7 @@ def move():
 
     clear()
 
+    # movimientos de pacman
     if valid(pacman + aim):
         pacman.move(aim)
 
@@ -131,12 +133,14 @@ def move():
 
     up()
     goto(pacman.x + 10, pacman.y + 10)
+    # creacion de pacman
     dot(20, 'yellow')
 
     for point, course in ghosts:
         if valid(point + course):
             point.move(course)
         else:
+            # velocidad de los fantasmas
             options = [
                 vector(15, 0),
                 vector(-15, 0),
@@ -149,6 +153,8 @@ def move():
 
         up()
         goto(point.x + 10, point.y + 10)
+
+        # creacion de los fantasmas
         dot(20, 'red')
 
     update()
@@ -167,17 +173,31 @@ def change(x, y):
         aim.y = y
 
 
+# crea la ventana del juego
 setup(420, 420, 370, 0)
+
+# Escondiendo turtle para optimizar el tiempo de dibujo
 hideturtle()
 tracer(False)
+
+# formatos del indicador de score en la ventana
 writer.goto(190, 190)
 writer.color('white')
 writer.write(state['score'])
+
+# captura los eventos dados por el usuario
 listen()
+
+# registra los key-strokes dados por el usuario
 onkey(lambda: change(5, 0), 'Right')
 onkey(lambda: change(-5, 0), 'Left')
 onkey(lambda: change(0, 5), 'Up')
 onkey(lambda: change(0, -5), 'Down')
 world()
+
+# llamando a la funcion que controla el movimiento
+# de pacman y de los fantasmas
 move()
+
+# es el mainloop del programa
 done()
